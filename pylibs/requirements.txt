@@ -1,0 +1,6 @@
+nose
+-e git://github.com/nvie/nose-machineout.git#egg=nose_machineout
+pylint
+pyflakes
+rope
+path.py

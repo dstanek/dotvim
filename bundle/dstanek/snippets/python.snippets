@@ -1,0 +1,25 @@
+# New Unit Test Method
+snippet timport
+	from unittest2 import TestCase
+
+snippet tclass
+	class ${1:ClassName}Test(TestCase):
+
+		${2}
+snippet tdef
+	def test_${1:fname}(self):
+		${2}
+
+snippet tae
+	self.assertEquals(${1:first}, ${2:second})
+
+snippet tane
+	self.assertNotEquals(${1:first}, ${2:second})
+
+snippet pdb
+	import pdb; pdb.set_trace()
+
+snippet main
+	if __name__ == '__main__':
+snippet D
+	file('${1:/tmp/`$USER`-debug.txt}', 'a').write(repr(${2}) + '\n')
