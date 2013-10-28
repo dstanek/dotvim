@@ -5,10 +5,9 @@
 " general settings {{{
 
 set nocompatible " be Vim not vi
-
 let mapleader=","
 
-set history=100
+set cmdheight=2
 
 " }}}
 
@@ -20,6 +19,8 @@ call pathogen#infect()
 " }}}
 
 " basic editing setup {{{
+
+set history=100
 
 " Enable file type detection.
 filetype on
@@ -47,9 +48,9 @@ autocmd FileType text setlocal textwidth=78
 " minimum lines above and below cursor position
 set scrolloff=3
 
-" Store temporary files in a central spot
-set backupdir=~/tmp,/tmp
-set directory=~/tmp,/tmp
+" stop storing swap/backup files
+set noswapfile
+set nobackup
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -231,6 +232,9 @@ inoremap <c-l> <esc>lviwuea
 " a faster escape
 inoremap jj <esc>
 
+" kill highlights
+nnoremap <leader><space> :noh<cr>
+
     " faster splits {{{
 
     map <C-j> <c-w>j
@@ -396,6 +400,12 @@ endif
     map <leader>g :call Google(expand("<cword>"))<CR>
     map <leader>G :call GooglePrompt()<CR>
     vmap <leader>g :call VGoogle()<CR>
+
+" }}}
+
+" autocompletion settings {{{
+
+set completeopt=menuone,menu,longest,preview
 
 " }}}
 
