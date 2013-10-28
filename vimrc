@@ -86,10 +86,7 @@ set list listchars=tab:»·,trail:·
 syntax enable
 
 set t_Co=256
-
-let g:zenburn_color_also_Ignore = 1
-let g:zenburn_alternate_Visual = 1
-colorscheme asmdev
+colorscheme solarized
 
 " }}}
 
