@@ -409,4 +409,16 @@ set completeopt=menuone,menu,longest,preview
 
 " }}}
 
+" license mappings {{{
+
+map <leader>AL :call AddApacheLicense()<cr>
+
+function! AddApacheLicense()
+    :0r ~/.vim/apache.txt
+    exe "3 s/<copyright-year>/" . strftime("%Y") . "/"
+    :16
+endfunction
+
+" }}}
+
 " vim:foldenable:fdm=marker
