@@ -16,12 +16,12 @@ set guioptions-=T   " hide toolbar
 set guioptions-=m   " hide menu
 set guioptions-=t   " no tearof menu entries in Win32
 
-set antialias linespace=2 gfn=Menlo\ Regular:h16
+set antialias linespace=2
 
 " GUI Powerline settings {{{
 
-set guifont=Menlo\ Regular\ for\ Powerline:h14
-"set guifont=Iconsolata-dz\ for\ Powerline:h12
+"set guifont=Menlo\ Regular\ for\ Powerline:h14
+set guifont=Inconsolata-dz\ for\ Powerline:h14
 let g:Powerline_symbols = 'fancy'
 
 " }}}
