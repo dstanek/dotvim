@@ -11,10 +11,42 @@ set cmdheight=2
 
 " }}}
 
-" pathogen settings {{{
+" vundle settings {{{
 
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+filetype off  " just for vundle; it'll be turned on later
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
+"runtime bundle/vim-pathogen/autoload/pathogen.vim
+"call pathogen#infect()
+
+Bundle "gmarik/vundle"
+Bundle "bling/vim-airline"
+Bundle "tpope/vim-fugitive"
+Bundle "vim-scripts/Gundo"
+Bundle "vim-scripts/zoom.vim"
+Bundle "altercation/vim-colors-solarized"
+Bundle "jmcantrell/vim-virtualenv"
+Bundle "tpope/vim-surround"
+Bundle "kien/ctrlp.vim"
+Bundle "majutsushi/tagbar"
+Bundle "scrooloose/syntastic.git"
+Bundle "airblade/vim-gitgutter"
+Bundle "tmhedberg/SimpylFold"
+Bundle "joequery/Stupid-EasyMotion"
+Bundle "Raimondi/delimitMate"
+Bundle "Valloric/YouCompleteMe"
+Bundle "vim-scripts/TaskList.vim"
+
+" snippets
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
+
+" makegreen
+Bundle "pydave/AsyncCommand"
+Bundle "jimf/vim-red-green"
+Bundle "jimf/vim-async-make-green"
+
+call vundle#end()
 
 " }}}
 
@@ -181,13 +213,6 @@ let g:tagbar_autoshowtag = 1
 
 " }}}
 
-" powerline settings {{{
-
-let g:Powerline_cache_enabled = 0
-let g:Powerline_symbols = 'unicode'
-
-" }}}
-
 " key mappings {{{
 
 " as a time saver allow ; to be used as : for vim commands
@@ -208,8 +233,8 @@ map <leader>L <plug>TaskList
 " toggle the Gundo panel
 nnoremap <leader>U :GundoToggle<cr>
 
-" toggle the TagBar panel
-nnoremap <leader>l :TagBarToggle<cr>
+" toggle the Tagbar panel
+nnoremap <leader>l :TagbarToggle<cr>
 
 " create a map for MakeGreen so it won't automatically bind to <leader>t
 nnoremap <unique> <silent> <leader>m :call MakeGreen()<cr>
@@ -415,6 +440,56 @@ function! AddApacheLicense()
     exe "3 s/<copyright-year>/" . strftime("%Y") . "/"
     :16
 endfunction
+
+" }}}
+
+" plugin settings {{{
+
+    " airline {{{
+
+    let g:airline_powerline_fonts = 1
+    "let g:airline#extensions#tabline#enabled = 1
+    "let g:airline#extensions#tabline#tab_min_count = 0
+
+    " }}}
+
+    " virtualenv {{{
+
+    let g:virtualenv_directory = "~/.pythonbrew/venvs/Python-2.7/"
+
+    " }}}
+
+    "  gitgutter {{{
+    let g:gitgutter_realtime = 1
+    "let g:gitgutter_eager = 1
+    "  }}}
+
+    " SimpylFold {{{
+
+    let g:SimpylFold_fold_docstring = 0
+
+    " }}}
+
+    " delimitMate {{{
+
+    au FileType python let b:delimitMate_nesting_quotes = ['"']
+
+    " }}}
+
+    " UltiSnips {{{
+
+    let g:UltiSnipsExpandTrigger="<C-space>"
+    let g:UltiSnipsEditSplit="horizontal"
+    let g:UltiSnipsSnippetsDir="ultisnips"
+    let g:UltiSnipsSnippetDirectories=["ultisnips"]
+
+    " }}}
+
+    " YouCompleteMe {{{
+
+    let g:ycm_autoclose_preview_window_after_insertion = 1
+
+    " }}}
 
 " }}}
 
