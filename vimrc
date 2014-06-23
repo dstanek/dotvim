@@ -37,6 +37,10 @@ Bundle "Raimondi/delimitMate"
 Bundle "Valloric/YouCompleteMe"
 Bundle "vim-scripts/TaskList.vim"
 
+" colors
+Bundle "endel/vim-github-colorscheme"
+Bundle "nanotech/jellybeans.vim"
+
 " snippets
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
@@ -118,7 +122,8 @@ set list listchars=tab:»·,trail:·
 syntax enable
 
 set t_Co=256
-colorscheme solarized
+"colorscheme solarized
+colorscheme github
 
 " }}}
 
