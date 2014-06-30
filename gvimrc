@@ -30,4 +30,6 @@ let g:Powerline_symbols = 'fancy'
 set fuoptions=maxvert,maxhorz
 au GUIEnter * set fullscreen
 
+autocmd VimLeave * macaction hide:
+
 " vim:foldenable:fdm=marker
