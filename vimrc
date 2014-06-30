@@ -229,9 +229,6 @@ nmap <silent> <c-n> :silent noh<cr>
 " faster saving
 nmap <leader>w :w!<cr>
 
-" toggle line numbering
-nnoremap <leader>n :set nonumber!<cr>
-
 " show the tasklist if there are tasks (press q to close it)
 map <leader>L <plug>TaskList
 
@@ -495,6 +492,26 @@ endfunction
     let g:ycm_autoclose_preview_window_after_insertion = 1
 
     " }}}
+
+" }}}
+
+" line numbering {{{
+
+function! CycleLineNumbering()
+    " relative -> numbers -> off
+    if (&number == 1)
+        if (&relativenumber == 1)
+            set nornu
+        else
+            set nonu
+        endif
+    else
+        set nu rnu
+    endif
+endf
+
+set number relativenumber
+nnoremap <leader>n :call CycleLineNumbering()<cr>
 
 " }}}
 
