@@ -21,7 +21,6 @@ call vundle#begin()
 
 Bundle "gmarik/vundle"
 Bundle "bling/vim-airline"
-Bundle "tpope/vim-fugitive"
 Bundle "vim-scripts/Gundo"
 Bundle "vim-scripts/zoom.vim"
 Bundle "altercation/vim-colors-solarized"
@@ -30,12 +29,21 @@ Bundle "tpope/vim-surround"
 Bundle "kien/ctrlp.vim"
 Bundle "majutsushi/tagbar"
 Bundle "scrooloose/syntastic.git"
-Bundle "airblade/vim-gitgutter"
 Bundle "tmhedberg/SimpylFold"
 Bundle "joequery/Stupid-EasyMotion"
 Bundle "Raimondi/delimitMate"
-Bundle "Valloric/YouCompleteMe"
+"Bundle "Valloric/YouCompleteMe"
 Bundle "vim-scripts/TaskList.vim"
+Bundle "vim-scripts/python_match.vim"
+Bundle "Rykka/riv.vim"
+Bundle "mattboehm/vim-unstack"
+Bundle "Zuckonit/vim-airline-tomato"
+Bundle "gotcha/vimpdb"
+
+" Git helpers
+Bundle "tpope/vim-fugitive"
+Bundle "airblade/vim-gitgutter"
+Bundle "gregsexton/gitv"
 
 " colors
 Bundle "endel/vim-github-colorscheme"
@@ -106,7 +114,7 @@ if !exists(":DiffOrig")
             \ | wincmd p | diffthis
 endif
 
-" filter paths from glob operations (and Command-T)
+" filter paths from glob operations (and ctrlp)
 set wildignore+=*.o,*.obj,.git,.hg,.svn,*.pyc,*.pyo
 
 set wildmode=longest,list
@@ -512,6 +520,13 @@ endf
 
 set number relativenumber
 nnoremap <leader>n :call CycleLineNumbering()<cr>
+
+" }}}
+
+" Python {{{
+
+    au FileType python let b:delimitMate_nesting_quotes = ['"']
+    au FileType python :set spellfile=~/.vim/spell/python.add
 
 " }}}
 
