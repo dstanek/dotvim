@@ -10,12 +10,12 @@
 [submodule "pylibs/ropevim"]
 	path = pylibs/ropevim
 	url = git@github.com:dstanek/ropevim.git
-[submodule "pylibs/nose"]
-	path = pylibs/nose
-	url = https://github.com/nose-devs/nose.git
-[submodule "pylibs/nose-machineout"]
-	path = pylibs/nose-machineout
-	url = https://github.com/nvie/nose-machineout.git
+#[submodule "pylibs/nose"]
+#	path = pylibs/nose
+#	url = https://github.com/nose-devs/nose.git
+#[submodule "pylibs/nose-machineout"]
+#	path = pylibs/nose-machineout
+#	url = https://github.com/nvie/nose-machineout.git
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
